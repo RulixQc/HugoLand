@@ -157,6 +157,32 @@ namespace HugoLand
                     case "list_monster":
                         Afficher.AfficherMonstre();
                         break;
+                    case "create_worldobject":
+                        Console.Write("Nom: ");
+                        string descriptionObjMonde = Console.ReadLine();
+                        Console.Write("X: ");
+                        int xObjMonde = 0;
+                        int.TryParse(Console.ReadLine(), out xObjMonde);
+                        Console.Write("Y: ");
+                        int yObjMonde = 0;
+                        int.TryParse(Console.ReadLine(), out yObjMonde);
+                        Console.Write("Type: ");
+                        int typeObjMonde = 0;
+                        int.TryParse(Console.ReadLine(), out typeObjMonde);
+                        Console.Write("Monde ID: ");
+                        int mondeIdObjMonde = 0;
+                        int.TryParse(Console.ReadLine(), out mondeIdObjMonde);
+                        ObjetMonde.CréerObjet(xObjMonde, yObjMonde, descriptionObjMonde, typeObjMonde, mondeIdObjMonde);
+                        break;
+                    case "delete_worldobject":
+                        Console.Write("ID: ");
+                        int idObjMonde = 0;
+                        int.TryParse(Console.ReadLine(), out idObjMonde);
+                        ObjetMonde.SupprimerObjet(idObjMonde);
+                        break;
+                    case "list_worldobject":
+                        Afficher.AfficherObjetMonde();
+                        break;
                     case "clear":
                         Console.Clear();
                         Console.WriteLine("==================================================================");
@@ -168,7 +194,7 @@ namespace HugoLand
                         break;
                     case "help":
                         Console.WriteLine("***** HELP *****");
-                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_world\ncreate_monster\ndelete_monster\nlist_monster\nclear\nexit\nhelp");
+                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_world\ncreate_monster\ndelete_monster\nlist_monster\ncreate_worldobject\ndelete_worldobject\nlist_worldobject\nclear\nexit\nhelp");
                         Console.WriteLine("****************");
                         break;
                     default:

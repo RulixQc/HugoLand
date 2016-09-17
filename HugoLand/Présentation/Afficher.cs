@@ -35,9 +35,15 @@ namespace HugoLand.Présentation
             }
         }
 
-        public static void AfficherObjectmonde()
+        public static void AfficherObjetMonde()
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                foreach (Accès_aux_données.ObjetMonde objMonde in context.ObjetMondes)
+                {
+                    Console.WriteLine("ID: " + objMonde.Id + "\tDescription: " + objMonde.Description + "\tType: " + objMonde.TypeObjet + "\tMondeID: " + objMonde.MondeId);
+                }
+            }
         }
 
         public static void AfficherJoueurs()

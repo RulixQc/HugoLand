@@ -14,19 +14,36 @@ namespace HugoLand.Métier
     /// </summary>
     public static class ObjetMonde
     {
-        public static void CréerObjet(Accès_aux_données.Monde monde)
+        public static void CréerObjet(int xParam, int yParam, string description, int typeObjet, int mondeId)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                var objmonde = context.Set<Accès_aux_données.ObjetMonde>();
+                objmonde.Add(new Accès_aux_données.ObjetMonde() { x = xParam, y = yParam, Description = description, TypeObjet = typeObjet, MondeId = mondeId });
+                context.SaveChanges();
+            }
         }
 
-        public static void SupprimerObjet(Accès_aux_données.Monde monde)
+        public static void SupprimerObjet(int id)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.ObjetMonde objMonde = context.ObjetMondes.Where(o => o.Id == id).FirstOrDefault();
+                if (objMonde != null)
+                    context.ObjetMondes.Remove(objMonde);
+                context.SaveChanges();
+            }
         }
 
-        public static void ChangerDescription(Accès_aux_données.Monde monde, string description)
+        public static void ChangerDescription(int id, string description)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.ObjetMonde objMonde = context.ObjetMondes.Where(o => o.Id == id).FirstOrDefault();
+                if (objMonde != null)
+                    objMonde.Description = description;
+                context.SaveChanges();
+            }
         }
     }
 }

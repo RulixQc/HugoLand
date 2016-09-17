@@ -9,3 +9,14 @@ c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.csprojResolveAssemblyReference.cache
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.exe
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.pdb
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\HugoLand.exe.config
+C:\Users\David\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.exe
+C:\Users\David\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.pdb
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\HugoLand.exe
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\HugoLand.pdb
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.dll
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.xml
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\David\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.csprojResolveAssemblyReference.cache

@@ -18,20 +18,9 @@ namespace HugoLand.Métier
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
             {
-                /*try
-                {*/
-                    //context.TableName.AddObject(TableEntityInstance);
-                    var classes = context.Set<Accès_aux_données.Classe>();
-                    classes.Add(new Accès_aux_données.Classe() { Description = "", Id = 0, Monde = monde, Heros = null, MondeId = 0, StatBaseDex = 0, StatBaseInt = 0, StatBaseStr = 0, StatBaseVitalite = 0,NomClasse = nom });
-                    context.SaveChanges();
-                /*}
-                catch (Exception ex)
-                {
-                    if (ex.InnerException != null)
-                        Console.WriteLine("ERROR WITH CLASSES: " + ex.InnerException.Message);
-                    else
-                        Console.WriteLine("ERROR WITH CLASSES2: " + ex.Message);
-                }*/
+                var classes = context.Set<Accès_aux_données.Classe>();
+                classes.Add(new Accès_aux_données.Classe() { Description = "", Id = 0, Monde = monde, Heros = null, MondeId = 0, StatBaseDex = 0, StatBaseInt = 0, StatBaseStr = 0, StatBaseVitalite = 0, NomClasse = nom });
+                context.SaveChanges();
             }
             return 0;
         }

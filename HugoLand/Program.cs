@@ -16,10 +16,13 @@ namespace HugoLand
     /// </summary>
     class Program
     {
+
+        const string version = "1.3";
+
         static void Main(string[] args)
         {
             Console.WriteLine("==================================================================");
-            Console.WriteLine("==================== WELCOME TO HUGOLAND V1.0 ====================");
+            Console.WriteLine("==================== WELCOME TO HUGOLAND V" + version + " ====================");
             Console.WriteLine("==================================================================");
             while (true)
             {
@@ -56,8 +59,11 @@ namespace HugoLand
                         Console.Write("Description: ");
                         string descriptionItem = Console.ReadLine();
                         Console.Write("Monde ID: ");
-                        int mondeID = 0;
-                        int.TryParse(Console.ReadLine(), out mondeID);
+                        int mondeIdItem = 0;
+                        int.TryParse(Console.ReadLine(), out mondeIdItem);
+                        Console.Write("Image ID: ");
+                        int imageIdItem = 0;
+                        int.TryParse(Console.ReadLine(), out imageIdItem);
                         Console.Write("Niveau: ");
                         int niveauItem = 0;
                         int.TryParse(Console.ReadLine(), out niveauItem);
@@ -88,7 +94,7 @@ namespace HugoLand
                         Console.Write("Valeur ($): ");
                         decimal valItem = 0;
                         decimal.TryParse(Console.ReadLine(), out valItem);
-                        Item.CréerItem(descriptionItem, null, 0, null, null, mondeID, niveauItem, nomItem, poidsItem, quantitéItem, ramassé, forceItem, dexItem, endItem, intItem, nivItem, null, valItem);
+                        Item.CréerItem(descriptionItem, null, imageIdItem, null, null, mondeIdItem, niveauItem, nomItem, poidsItem, quantitéItem, ramassé, forceItem, dexItem, endItem, intItem, nivItem, null, valItem);
                         break;
                     case "list_item":
                         Afficher.AfficherItem();
@@ -113,15 +119,56 @@ namespace HugoLand
                         int.TryParse(Console.ReadLine(), out id);
                         Monde.SupprimerMonde(id);
                         break;
+                    case "create_monster":
+                        Console.Write("Nom: ");
+                        string nomMonster = Console.ReadLine();
+                        Console.Write("Niveau: ");
+                        int niveauMonster = 0;
+                        int.TryParse(Console.ReadLine(), out niveauMonster);
+                        Console.Write("X: ");
+                        int xMonster = 0;
+                        int.TryParse(Console.ReadLine(), out xMonster);
+                        Console.Write("Y: ");
+                        int yMonster = 0;
+                        int.TryParse(Console.ReadLine(), out yMonster);
+                        Console.Write("HP: ");
+                        int statPVMonster = 0;
+                        int.TryParse(Console.ReadLine(), out statPVMonster);
+                        Console.Write("Damage Max: ");
+                        int statDamageMinMonster = 0;
+                        int.TryParse(Console.ReadLine(), out statDamageMinMonster);
+                        Console.Write("Damage Min: ");
+                        int statDamageMaxMonster = 0;
+                        int.TryParse(Console.ReadLine(), out statDamageMaxMonster);
+                        Console.Write("Monde ID: ");
+                        int mondeIdMonster = 0;
+                        int.TryParse(Console.ReadLine(), out mondeIdMonster);
+                        Console.Write("Image ID: ");
+                        int imageIdMonster = 0;
+                        int.TryParse(Console.ReadLine(), out imageIdMonster);
+                        Monstre.CréerMonstre(nomMonster, niveauMonster, xMonster, yMonster, statPVMonster, statDamageMinMonster, statDamageMaxMonster, mondeIdMonster, imageIdMonster, null);
+                        break;
+                    case "delete_monster":
+                        Console.Write("ID: ");
+                        int idMonster = 0;
+                        int.TryParse(Console.ReadLine(), out idMonster);
+                        Monstre.TuerMonstre(idMonster);
+                        break;
+                    case "list_monster":
+                        Afficher.AfficherMonstre();
+                        break;
                     case "clear":
                         Console.Clear();
+                        Console.WriteLine("==================================================================");
+                        Console.WriteLine("==================== WELCOME TO HUGOLAND V" + version + " ====================");
+                        Console.WriteLine("==================================================================");
                         break;
                     case "exit":
                         Environment.Exit(0);
                         break;
                     case "help":
                         Console.WriteLine("***** HELP *****");
-                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_worldclear\nexit\nhelp");
+                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_world\ncreate_monster\ndelete_monster\nlist_monster\nclear\nexit\nhelp");
                         Console.WriteLine("****************");
                         break;
                     default:

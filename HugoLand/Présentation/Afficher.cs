@@ -26,7 +26,13 @@ namespace HugoLand.Présentation
 
         public static void AfficherMonstre()
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                foreach (Accès_aux_données.Monstre monstre in context.Monstres)
+                {
+                    Console.WriteLine("ID: " + monstre.Id + "\tNom: " + monstre.Nom + "\tNiveau: " + monstre.Niveau + "\tHP: " + monstre.StatPV);
+                }
+            }
         }
 
         public static void AfficherObjectmonde()
@@ -58,7 +64,7 @@ namespace HugoLand.Présentation
             {
                 foreach (Accès_aux_données.Item item in context.Items)
                 {
-                    Console.WriteLine("ID: " + item.Id + "\tNom: " + item.Nom + "\tDescription: " + item.Description + "\t\tValeur: " + Math.Round((double)item.ValeurArgent, 0).ToString() + "$\tNiveau: " + item.Niveau);
+                    Console.WriteLine("ID: " + item.Id + "\tNom: " + item.Nom + "\tDescription: " + item.Description + "\tValeur: " + Math.Round((double)item.ValeurArgent, 0).ToString() + "$\tNiveau: " + item.Niveau);
                 }
             }
         }

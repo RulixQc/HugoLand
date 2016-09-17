@@ -51,26 +51,61 @@ namespace HugoLand
                         Afficher.AfficherJoueurs();
                         break;
                     case "add_item":
-                        string description = "";
-                        Item.CréerItem(description, null, )
-                        Console.Write();
+                        Console.Write("Nom: ");
+                        string nomItem = Console.ReadLine();
+                        Console.Write("Description: ");
+                        string descriptionItem = Console.ReadLine();
+                        Console.Write("Monde ID: ");
+                        int mondeID = 0;
+                        int.TryParse(Console.ReadLine(), out mondeID);
+                        Console.Write("Niveau: ");
+                        int niveauItem = 0;
+                        int.TryParse(Console.ReadLine(), out niveauItem);
+                        Console.Write("Poids: ");
+                        int poidsItem = 0;
+                        int.TryParse(Console.ReadLine(), out poidsItem);
+                        Console.Write("Quantité: ");
+                        int quantitéItem = 0;
+                        int.TryParse(Console.ReadLine(), out quantitéItem);
+                        Console.Write("Ramassé (true/false): ");
+                        bool ramassé = false;
+                        bool.TryParse(Console.ReadLine(), out ramassé);
+                        Console.Write("Force requise: ");
+                        int forceItem = 0;
+                        int.TryParse(Console.ReadLine(), out forceItem);
+                        Console.Write("Dextérité requise: ");
+                        int dexItem = 0;
+                        int.TryParse(Console.ReadLine(), out dexItem);
+                        Console.Write("Endurance requise: ");
+                        int endItem = 0;
+                        int.TryParse(Console.ReadLine(), out endItem);
+                        Console.Write("Intelligence requise: ");
+                        int intItem = 0;
+                        int.TryParse(Console.ReadLine(), out intItem);
+                        Console.Write("Niveau requis: ");
+                        int nivItem = 0;
+                        int.TryParse(Console.ReadLine(), out nivItem);
+                        Console.Write("Valeur ($): ");
+                        decimal valItem = 0;
+                        decimal.TryParse(Console.ReadLine(), out valItem);
+                        Item.CréerItem(descriptionItem, null, 0, null, null, mondeID, niveauItem, nomItem, poidsItem, quantitéItem, ramassé, forceItem, dexItem, endItem, intItem, nivItem, null, valItem);
+                        break;
+                    case "list_item":
+                        Afficher.AfficherItem();
                         break;
                     case "create_world":
                         Console.Write("Description: ");
-                        string description = Console.ReadLine();
+                        string descriptionMonde = Console.ReadLine();
                         Console.Write("Limite X: ");
                         int x = 0;
                         int y = 0;
                         int.TryParse(Console.ReadLine(), out x);
                         Console.Write("Limite Y: ");
                         int.TryParse(Console.ReadLine(), out y);
-                        Monde.CréerMonde(null, description, x, y);
+                        Monde.CréerMonde(null, descriptionMonde, x, y);
                         break;
                     case "list_world":
-                        foreach(Accès_aux_données.Monde monde in Monde.RetournerMondes())
-                        {
-                            Console.WriteLine("ID: " + monde.Id + "\tDescription: " + monde.Description + "\tLimite X: " + monde.LimiteX + "\tLimite Y: " + monde.LimiteY);
-                        }
+                        Afficher.AfficherMonde();
                         break;
                     case "delete_world":
                         Console.Write("ID: ");
@@ -86,7 +121,7 @@ namespace HugoLand
                         break;
                     case "help":
                         Console.WriteLine("***** HELP *****");
-                        Console.WriteLine("user_create\nuser_list\nuser_delete\nclear\nexit\nhelp");
+                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_worldclear\nexit\nhelp");
                         Console.WriteLine("****************");
                         break;
                     default:

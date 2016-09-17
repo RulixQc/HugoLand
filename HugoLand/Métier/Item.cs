@@ -14,8 +14,8 @@ namespace HugoLand.Métier
     /// </summary>
     public static class Item
     {
-        public static void CréerItem(string Description, ICollection<HugoLand.Accès_aux_données.EffetItem> effet, int id, int imageid,
-            ICollection<HugoLand.Accès_aux_données.InventaireHero> invHe, Accès_aux_données.Monde monde, int mondeid, int niveau, string nom, int poids, int quantite,
+        public static void CréerItem(string Description, ICollection<Accès_aux_données.EffetItem> effet, int id, int imageid,
+            ICollection<Accès_aux_données.InventaireHero> invHe, Accès_aux_données.Monde monde, int mondeid, int niveau, string nom, int poids, int quantite,
             bool ramasse, int reqForce, int reqDex, int reqEnd, int reqInt, int reqNiv, byte[] rowVersion, int valeur)
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())

@@ -14,29 +14,60 @@ namespace HugoLand.Métier
     /// </summary>
     public static class Classe
     {
-        public static void CréerClasse(string nom, Accès_aux_données.Monde monde, int statBaseDex, int statBaseInt, int statBaseStr, int statBaseVitalite, string description)
+        public static void CréerClasse(string nomClasse, string description, int statStr, int statDex, int statInt, int statVit, int mondeId)
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
             {
-                var classes = context.Set<Accès_aux_données.Classe>();
-                classes.Add(new Accès_aux_données.Classe() { Description = description, Monde = monde, Heros = null, MondeId = monde.Id, StatBaseDex = statBaseDex, StatBaseInt = statBaseInt, StatBaseStr = statBaseStr, StatBaseVitalite = statBaseVitalite, NomClasse = nom });
+                var classe = context.Set<Accès_aux_données.Classe>();
+                classe.Add(new Accès_aux_données.Classe() { NomClasse = nomClasse, Description = description, StatBaseStr = statStr, StatBaseDex = statDex, StatBaseInt = statInt, StatBaseVitalite = statVit, MondeId = mondeId });
                 context.SaveChanges();
             }
         }
 
-        public static void SupprimerClasse()
+        public static void SupprimerClasse(int id)
         {
-            // wat up squirrel-face
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.Classe classe = context.Classes.Where(c => c.Id == id).FirstOrDefault();
+                if (classe != null)
+                    context.Classes.Remove(classe);
+                context.SaveChanges();
+            }
         }
 
-        public static void ModifierClasse()
+        public static void ModifierClasse(int id, string nomClasse, string description, int statStr, int statDex, int statInt, int statVit, int mondeId)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.Classe classe = context.Classes.Where(c => c.Id == id).FirstOrDefault();
+                if (classe != null)
+                {
+                    classe.NomClasse = nomClasse;
+                    classe.Description = description;
+                    classe.StatBaseStr = statStr;
+                    classe.StatBaseDex = statDex;
+                    classe.StatBaseInt = statInt;
+                    classe.StatBaseVitalite = statVit;
+                    classe.MondeId = mondeId;
+                }
+                context.SaveChanges();
+            }
         }
 
-        public static void RetournerClassesParMonde(int clé)
+        public static List<Accès_aux_données.Classe> RetournerClassesParMonde(int mondeFiltreId)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                List<Accès_aux_données.Classe> classes = new List<Accès_aux_données.Classe>();
+                foreach (Accès_aux_données.Classe classe in context.Classes)
+                {
+                    if (classe.MondeId == mondeFiltreId)
+                    {
+                        classes.Add(classe);
+                    }
+                }
+                return classes;
+            }
         }
 
         public static Accès_aux_données.Classe TrouverClasse(Accès_aux_données.Hero hero)

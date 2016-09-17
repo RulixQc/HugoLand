@@ -50,16 +50,9 @@ namespace HugoLand.Présentation
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
             {
-                try
+                foreach (Accès_aux_données.CompteJoueur joueur in context.CompteJoueurs)
                 {
-                    foreach (Accès_aux_données.CompteJoueur joueur in context.CompteJoueurs)
-                    {
-                        Console.WriteLine("Username: " + joueur.NomUtilisateur + "\tPassword: " + joueur.Password + "\tFullname: " + joueur.Prenom + " " + joueur.Nom);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ERROR WITH CLASSES: " + ex.InnerException.Message);
+                    Console.WriteLine("ID: " + joueur.Id + "\tUsername: " + joueur.NomUtilisateur + "\tPassword: " + joueur.Password + "\tFullname: " + joueur.Prenom + " " + joueur.Nom);
                 }
             }
         }
@@ -87,7 +80,13 @@ namespace HugoLand.Présentation
 
         public static void AfficherClasses()
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                foreach (Accès_aux_données.Classe classe in context.Classes)
+                {
+                    Console.WriteLine("ID: " + classe.Id + "\tNom: " + classe.NomClasse + "\tDescription: " + classe.Description);
+                }
+            }
         }
 
     }

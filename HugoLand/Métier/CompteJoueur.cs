@@ -24,24 +24,40 @@ namespace HugoLand.Métier
             }
         }
 
-        public static void SupprimerJoueur(string nomUtilisateur)
+        public static void SupprimerJoueur(int id)
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
             {
                 var joueurs = context.Set<Accès_aux_données.CompteJoueur>();
-                joueurs.Remove(joueurs.FirstOrDefault(j => j.NomUtilisateur == nomUtilisateur));
+                Accès_aux_données.CompteJoueur joueur = joueurs.FirstOrDefault(j => j.Id == id);
+                joueurs.Remove(joueur);
                 context.SaveChanges();
             }
         }
 
-        public static void ModiferParamètres()
+        public static void ModifierParamètres(int id, string prénom, string nom, string courriel, string nomUtilisateur, string motDePasse, ICollection<Accès_aux_données.Hero> heros = null, int typeUtilisateur = 0)
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                var joueurs = context.Set<Accès_aux_données.CompteJoueur>();
+                Accès_aux_données.CompteJoueur joueur = joueurs.FirstOrDefault(j => j.Id == id);
+                if(joueur != null)
+                {
+                    joueur.Prenom = prénom;
+                    joueur.Nom = nom;
+                    joueur.NomUtilisateur = nomUtilisateur;
+                    joueur.Password = motDePasse;
+                    joueur.Courriel = courriel;
+                    joueur.Heros = heros;
+                    joueur.TypeUtilisateur = typeUtilisateur;
+                }
+                context.SaveChanges();
+            }
         }
 
-        public static void ValiderConnexion()
+        public static bool ValiderConnexion()
         {
-
+            return true;
         }
     }
 }

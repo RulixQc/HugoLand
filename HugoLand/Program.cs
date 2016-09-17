@@ -17,7 +17,7 @@ namespace HugoLand
     class Program
     {
 
-        const string version = "1.3";
+        const string version = "1.4";
 
         static void Main(string[] args)
         {
@@ -45,8 +45,9 @@ namespace HugoLand
                         break;
                     case "user_delete":
                         Console.Write("Username: ");
-                        string username2 = Console.ReadLine();
-                        CompteJoueur.SupprimerJoueur(username2);
+                        int playerId = 0;
+                        int.TryParse(Console.ReadLine(), out playerId);
+                        CompteJoueur.SupprimerJoueur(playerId);
                         Console.WriteLine("user_deleted");
                         break;
                     case "user_list":
@@ -183,18 +184,77 @@ namespace HugoLand
                     case "list_worldobject":
                         Afficher.AfficherObjetMonde();
                         break;
+                    case "create_class":
+                        Console.Write("Nom: ");
+                        string nomClass = Console.ReadLine();
+                        Console.Write("Description: ");
+                        string descriptionClass = Console.ReadLine();
+                        Console.Write("Force: ");
+                        int statForceClass = 0;
+                        int.TryParse(Console.ReadLine(), out statForceClass);
+                        Console.Write("Dextérité: ");
+                        int statDexClass = 0;
+                        int.TryParse(Console.ReadLine(), out statDexClass);
+                        Console.Write("Intelligence: ");
+                        int statIntClass = 0;
+                        int.TryParse(Console.ReadLine(), out statIntClass);
+                        Console.Write("Vitalité: ");
+                        int statVitalitéClass = 0;
+                        int.TryParse(Console.ReadLine(), out statVitalitéClass);
+                        Console.Write("Monde ID: ");
+                        int mondeIdClass = 0;
+                        int.TryParse(Console.ReadLine(), out mondeIdClass);
+                        Classe.CréerClasse(nomClass, descriptionClass, statForceClass, statDexClass, statIntClass, statVitalitéClass, mondeIdClass);
+                        break;
+                    case "modify_class":
+                        Console.Write("ID: ");
+                        int idClass = 0;
+                        int.TryParse(Console.ReadLine(), out idClass);
+                        Console.Write("Nom: ");
+                        nomClass = Console.ReadLine();
+                        Console.Write("Description: ");
+                        descriptionClass = Console.ReadLine();
+                        Console.Write("Force: ");
+                        statForceClass = 0;
+                        int.TryParse(Console.ReadLine(), out statForceClass);
+                        Console.Write("Dextérité: ");
+                        statDexClass = 0;
+                        int.TryParse(Console.ReadLine(), out statDexClass);
+                        Console.Write("Intelligence: ");
+                        statIntClass = 0;
+                        int.TryParse(Console.ReadLine(), out statIntClass);
+                        Console.Write("Vitalité: ");
+                        statVitalitéClass = 0;
+                        int.TryParse(Console.ReadLine(), out statVitalitéClass);
+                        Console.Write("Monde ID: ");
+                        mondeIdClass = 0;
+                        int.TryParse(Console.ReadLine(), out mondeIdClass);
+                        Classe.ModifierClasse(idClass, nomClass, descriptionClass, statForceClass, statDexClass, statIntClass, statVitalitéClass, mondeIdClass);
+                        break;
+                    case "delete_class":
+                        Console.Write("ID: ");
+                        int classId = 0;
+                        int.TryParse(Console.ReadLine(), out classId);
+                        Classe.SupprimerClasse(classId);
+                        break;
+                    case "list_class":
+                        Afficher.AfficherClasses();
+                        break;
                     case "clear":
                         Console.Clear();
                         Console.WriteLine("==================================================================");
                         Console.WriteLine("==================== WELCOME TO HUGOLAND V" + version + " ====================");
                         Console.WriteLine("==================================================================");
                         break;
+                    case "hello":
+                        Console.WriteLine("hi!");
+                        break;
                     case "exit":
                         Environment.Exit(0);
                         break;
                     case "help":
                         Console.WriteLine("***** HELP *****");
-                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_world\ncreate_monster\ndelete_monster\nlist_monster\ncreate_worldobject\ndelete_worldobject\nlist_worldobject\nclear\nexit\nhelp");
+                        Console.WriteLine("user_create\nuser_list\nuser_delete\nadd_item\nlist_item\ncreate_world\ndelete_world\nlist_world\ncreate_monster\ndelete_monster\nlist_monster\ncreate_worldobject\ndelete_worldobject\nlist_worldobject\ncreate_class\ndelete_class\nmodify_class\nlist_class\nclear\nexit\nhelp");
                         Console.WriteLine("****************");
                         break;
                     default:

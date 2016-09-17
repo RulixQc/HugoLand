@@ -14,20 +14,19 @@ namespace HugoLand.Métier
     /// </summary>
     public static class Classe
     {
-        public static int CréerClasse(string nom, Accès_aux_données.Monde monde)
+        public static void CréerClasse(string nom, Accès_aux_données.Monde monde, int statBaseDex, int statBaseInt, int statBaseStr, int statBaseVitalite, string description)
         {
             using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
             {
                 var classes = context.Set<Accès_aux_données.Classe>();
-                classes.Add(new Accès_aux_données.Classe() { Description = "", Id = 0, Monde = monde, Heros = null, MondeId = 0, StatBaseDex = 0, StatBaseInt = 0, StatBaseStr = 0, StatBaseVitalite = 0, NomClasse = nom });
+                classes.Add(new Accès_aux_données.Classe() { Description = description, Monde = monde, Heros = null, MondeId = monde.Id, StatBaseDex = statBaseDex, StatBaseInt = statBaseInt, StatBaseStr = statBaseStr, StatBaseVitalite = statBaseVitalite, NomClasse = nom });
                 context.SaveChanges();
             }
-            return 0;
         }
 
         public static void SupprimerClasse()
         {
-
+            // wat up squirrel-face
         }
 
         public static void ModifierClasse()

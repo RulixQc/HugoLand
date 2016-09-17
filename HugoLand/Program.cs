@@ -50,6 +50,9 @@ namespace HugoLand
                         Console.WriteLine("Users:");
                         Afficher.AfficherJoueurs();
                         break;
+                    case "add_item":
+
+                        break;
                     case "clear":
                         Console.Clear();
                         break;
@@ -60,42 +63,12 @@ namespace HugoLand
                         Console.WriteLine("***** HELP *****");
                         Console.WriteLine("user_create\nuser_list\nuser_delete\nclear\nexit\nhelp");
                         Console.WriteLine("****************");
-
                         break;
                     default:
                         Console.WriteLine("unknown_command");
                         break;
                 }
             }
-            /*CompteJoueur.SupprimerJoueur("Username");
-            CompteJoueur.SupprimerJoueur("Username");
-            CompteJoueur.SupprimerJoueur("Username");
-            CompteJoueur.CréerJoueur("David", "Girouard", "dgirouard@hugoland.com", "RulixQc", "Password01$");
-            CompteJoueur.CréerJoueur("Olivier", "Rouillard", "orouillard@hugoland.com", "Holyverz", "Password01$");
-            CompteJoueur.CréerJoueur("Yanik", "Lyth", "ylyth@hugoland.com", "LuckyStreak", "Password01$");*/
-            /*Console.WriteLine("Les joueurs:");
-            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
-            {
-                try
-                {
-                    foreach(Accès_aux_données.CompteJoueur joueur in context.CompteJoueurs)
-                    {
-                        Console.WriteLine("Username: " + joueur.NomUtilisateur + "\tPassword: " + joueur.Password);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ERROR WITH CLASSES: " + ex.InnerException.Message);
-                }
-            }*/
-            //Hero.CréerHéros("David");
-            /*Console.WriteLine("Mes héros:");
-            foreach(Accès_aux_données.Hero hero in Hero.ListerHéros())
-            {
-                Console.WriteLine(hero.NomHero);
-            }*/
-            //Hero.SupprimerHéros(0);
-            //Console.ReadKey();
         }
     }
 }

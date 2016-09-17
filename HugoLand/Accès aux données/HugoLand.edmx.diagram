@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="Model.Hero" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.InventaireHero" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Item" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Monde" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Monde" Width="2" PointX="0.75" PointY="11" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Monstre" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ObjetMonde" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
         <AssociationConnector Association="Model.FK_Classe_Monde" ManuallyRouted="false" />

@@ -16,7 +16,12 @@ namespace HugoLand.Métier
     {
         public static void CréerMonstre()
         {
-
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                var monstres = context.Set<Accès_aux_données.Monstre>();
+                monstres.Add(new Accès_aux_données.Monstre() { Classes = null, Description = "", Heros = null, Id = 0, Items = null, LimiteX = 500, LimiteY = 500, Monstres = null, ObjetMondes = null });
+                context.SaveChanges();
+            }
         }
 
         public static void TuerMonstre()

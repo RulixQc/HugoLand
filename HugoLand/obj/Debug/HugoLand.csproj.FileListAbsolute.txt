@@ -9,3 +9,6 @@ c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.csprojResolveAssemblyReference.cache
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.exe
 c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.pdb
+C:\Users\Chaudasses\Desktop\HugoLand\HugoLand\bin\Debug\HugoLand.exe.config
+C:\Users\Chaudasses\Desktop\HugoLand\HugoLand\obj\Debug\HugoLand.exe
+C:\Users\Chaudasses\Desktop\HugoLand\HugoLand\obj\Debug\HugoLand.pdb

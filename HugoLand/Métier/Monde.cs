@@ -26,7 +26,7 @@ namespace HugoLand.Métier
 
         public static void SupprimerMonde()
         {
-
+            //FUCK OFF
         }
 
         public static void ChangerLimites(int limiteX, int limiteY)

@@ -51,6 +51,8 @@ namespace HugoLand
                         Afficher.AfficherJoueurs();
                         break;
                     case "add_item":
+                        string description = "";
+                        Item.CréerItem(description, null, )
                         Console.Write();
                         break;
                     case "create_world":

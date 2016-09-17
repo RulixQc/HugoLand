@@ -51,7 +51,30 @@ namespace HugoLand
                         Afficher.AfficherJoueurs();
                         break;
                     case "add_item":
-
+                        Console.Write();
+                        break;
+                    case "create_world":
+                        Console.Write("Description: ");
+                        string description = Console.ReadLine();
+                        Console.Write("Limite X: ");
+                        int x = 0;
+                        int y = 0;
+                        int.TryParse(Console.ReadLine(), out x);
+                        Console.Write("Limite Y: ");
+                        int.TryParse(Console.ReadLine(), out y);
+                        Monde.CréerMonde(null, description, x, y);
+                        break;
+                    case "list_world":
+                        foreach(Accès_aux_données.Monde monde in Monde.RetournerMondes())
+                        {
+                            Console.WriteLine("ID: " + monde.Id + "\tDescription: " + monde.Description + "\tLimite X: " + monde.LimiteX + "\tLimite Y: " + monde.LimiteY);
+                        }
+                        break;
+                    case "delete_world":
+                        Console.Write("ID: ");
+                        int id = 0;
+                        int.TryParse(Console.ReadLine(), out id);
+                        Monde.SupprimerMonde(id);
                         break;
                     case "clear":
                         Console.Clear();

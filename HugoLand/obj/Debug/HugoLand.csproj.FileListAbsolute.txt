@@ -1,0 +1,11 @@
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\HugoLand.exe.config
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\HugoLand.exe
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\HugoLand.pdb
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\EntityFramework.dll
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\EntityFramework.xml
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\bin\Debug\fr\EntityFramework.resources.dll
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.csprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.exe
+c:\users\david\documents\visual studio 2015\Projects\HugoLand\HugoLand\obj\Debug\HugoLand.pdb

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="Model.Classe">
+        <MappingFragment StoreEntitySet="Classe">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomClasse" ColumnName="NomClasse" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StatBaseStr" ColumnName="StatBaseStr" />
+          <ScalarProperty Name="StatBaseDex" ColumnName="StatBaseDex" />
+          <ScalarProperty Name="StatBaseInt" ColumnName="StatBaseInt" />
+          <ScalarProperty Name="StatBaseVitalite" ColumnName="StatBaseVitalite" />
+          <ScalarProperty Name="MondeId" ColumnName="MondeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompteJoueurs">
+      <EntityTypeMapping TypeName="Model.CompteJoueur">
+        <MappingFragment StoreEntitySet="CompteJoueur">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NomUtilisateur" ColumnName="NomUtilisateur" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Courriel" ColumnName="Courriel" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="TypeUtilisateur" ColumnName="TypeUtilisateur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EffetItems">
+      <EntityTypeMapping TypeName="Model.EffetItem">
+        <MappingFragment StoreEntitySet="EffetItem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="ValeurEffet" ColumnName="ValeurEffet" />
+          <ScalarProperty Name="TypeEffet" ColumnName="TypeEffet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Heros">
+      <EntityTypeMapping TypeName="Model.Hero">
+        <MappingFragment StoreEntitySet="Heros">
+          <ScalarProperty Name="CompteJoueurId" ColumnName="CompteJoueurId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Niveau" ColumnName="Niveau" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="Argent" ColumnName="Argent" />
+          <ScalarProperty Name="StatStr" ColumnName="StatStr" />
+          <ScalarProperty Name="StatDex" ColumnName="StatDex" />
+          <ScalarProperty Name="StatInt" ColumnName="StatInt" />
+          <ScalarProperty Name="StatVitalite" ColumnName="StatVitalite" />
+          <ScalarProperty Name="MondeId" ColumnName="MondeId" />
+          <ScalarProperty Name="ClasseId" ColumnName="ClasseId" />
+          <ScalarProperty Name="NomHero" ColumnName="NomHero" />
+          <ScalarProperty Name="EstConnecte" ColumnName="EstConnecte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="Model.Hero">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="Model.Store.CreateHero">
+            <ScalarProperty Name="CompteJoueurId" ParameterName="ComptJoueurID" />
+            <ScalarProperty Name="NomHero" ParameterName="Nom" />
+            <ScalarProperty Name="ClasseId" ParameterName="Classe" />
+            <ScalarProperty Name="StatVitalite" ParameterName="Vitalite" />
+            <ScalarProperty Name="StatDex" ParameterName="Dex" />
+            <ScalarProperty Name="StatInt" ParameterName="Int" />
+            <ScalarProperty Name="StatStr" ParameterName="Str" />
+            <ScalarProperty Name="y" ParameterName="Y" />
+            <ScalarProperty Name="x" ParameterName="X" />
+            <ScalarProperty Name="EstConnecte" ParameterName="EstConnecte" />
+            <ScalarProperty Name="MondeId" ParameterName="MondeId" />
+            <ScalarProperty Name="Argent" ParameterName="Argent" />
+            <ScalarProperty Name="Niveau" ParameterName="Niveau" />
+            <ScalarProperty Name="Experience" ParameterName="Experience" />
+          </InsertFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InventaireHeroes">
+      <EntityTypeMapping TypeName="Model.InventaireHero">
+        <MappingFragment StoreEntitySet="InventaireHero">
+          <ScalarProperty Name="IdHero" ColumnName="IdHero" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="IdInventaireHero" ColumnName="IdInventaireHero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="Model.Item">
+        <MappingFragment StoreEntitySet="Item">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="Niveau" ColumnName="Niveau" />
+          <ScalarProperty Name="ValeurArgent" ColumnName="ValeurArgent" />
+          <ScalarProperty Name="Poids" ColumnName="Poids" />
+          <ScalarProperty Name="ReqNiveau" ColumnName="ReqNiveau" />
+          <ScalarProperty Name="ReqForce" ColumnName="ReqForce" />
+          <ScalarProperty Name="ReqDexterite" ColumnName="ReqDexterite" />
+          <ScalarProperty Name="ReqIntelligence" ColumnName="ReqIntelligence" />
+          <ScalarProperty Name="ReqEndurance" ColumnName="ReqEndurance" />
+          <ScalarProperty Name="MondeId" ColumnName="MondeId" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+          <ScalarProperty Name="Ramasse" ColumnName="Ramasse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mondes">
+      <EntityTypeMapping TypeName="Model.Monde">
+        <MappingFragment StoreEntitySet="Monde">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="LimiteX" ColumnName="LimiteX" />
+          <ScalarProperty Name="LimiteY" ColumnName="LimiteY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Monstres">
+      <EntityTypeMapping TypeName="Model.Monstre">
+        <MappingFragment StoreEntitySet="Monstre">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Niveau" ColumnName="Niveau" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="StatPV" ColumnName="StatPV" />
+          <ScalarProperty Name="StatDmgMin" ColumnName="StatDmgMin" />
+          <ScalarProperty Name="StatDmgMax" ColumnName="StatDmgMax" />
+          <ScalarProperty Name="MondeId" ColumnName="MondeId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ObjetMondes">
+      <EntityTypeMapping TypeName="Model.ObjetMonde">
+        <MappingFragment StoreEntitySet="ObjetMonde">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeObjet" ColumnName="TypeObjet" />
+          <ScalarProperty Name="MondeId" ColumnName="MondeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CreateHero" FunctionName="Model.Store.CreateHero" />
+    <FunctionImportMapping FunctionImportName="DeleteHero" FunctionName="Model.Store.DeleteHero" />
+    <FunctionImportMapping FunctionImportName="ItemConcurrence" FunctionName="Model.Store.ItemConcurrence" />
+    <FunctionImportMapping FunctionImportName="ReadHero" FunctionName="Model.Store.ReadHero">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Model.ReadHero_Result">
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+          <ScalarProperty Name="Column3" ColumnName="Column3" />
+          <ScalarProperty Name="Column4" ColumnName="Column4" />
+          <ScalarProperty Name="Column5" ColumnName="Column5" />
+          <ScalarProperty Name="Column6" ColumnName="Column6" />
+          <ScalarProperty Name="Column7" ColumnName="Column7" />
+          <ScalarProperty Name="Column8" ColumnName="Column8" />
+          <ScalarProperty Name="Column9" ColumnName="Column9" />
+          <ScalarProperty Name="Column10" ColumnName="Column10" />
+          <ScalarProperty Name="Column11" ColumnName="Column11" />
+          <ScalarProperty Name="Column12" ColumnName="Column12" />
+          <ScalarProperty Name="Column13" ColumnName="Column13" />
+          <ScalarProperty Name="Column14" ColumnName="Column14" />
+          <ScalarProperty Name="Column15" ColumnName="Column15" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UpdateHero" FunctionName="Model.Store.UpdateHero" />
+  </EntityContainerMapping>
+</Mapping>

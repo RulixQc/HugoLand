@@ -14,14 +14,34 @@ namespace HugoLand.Métier
     /// </summary>
     public static class InventaireHéros
     {
-        public static void AjouterItem()
+        public static void AjouterItem(int idHero, int idItem)
         {
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.Hero hero = context.Heros.Where(h => h.Id == idHero).FirstOrDefault();
+                Accès_aux_données.Item item = context.Items.Where(x => x.Id == idItem).FirstOrDefault();
+                if (hero != null && item != null)
+                {
+                    var inventaireHero = context.Set<Accès_aux_données.InventaireHero>();
+                    inventaireHero.Add(new Accès_aux_données.InventaireHero() {Item = item});
+                }
+
+            }
 
         }
 
-        public static void SupprimerItem(Accès_aux_données.Item item)
+        public static void SupprimerItem(int idhero, int idItem)
         {
-            
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.InventaireHero item = context.InventaireHeroes.Where(i => i.IdHero == idhero && i.ItemId == idItem).FirstOrDefault();
+                if (item != null)
+                {
+                    context.InventaireHeroes.Remove(item);
+                    context.SaveChanges();
+                }
+
+            }
         }
 
     }

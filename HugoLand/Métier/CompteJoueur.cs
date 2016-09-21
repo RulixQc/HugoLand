@@ -55,9 +55,13 @@ namespace HugoLand.Métier
             }
         }
 
-        public static bool ValiderConnexion()
+        public static bool ValiderConnexion(int id, string nom, string mdp)
         {
-            return true;
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                var joueurs = context.Set<Accès_aux_données.CompteJoueur>();
+                return joueurs.Any(j => j.Id == id && j.NomUtilisateur == nom && j.Password == mdp);
+            }
         }
     }
 }

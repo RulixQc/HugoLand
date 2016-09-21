@@ -23,3 +23,6 @@ C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.xml
 C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\David\Documents\HugoLand\HugoLand\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\David\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.csprojResolveAssemblyReference.cache
+C:\Users\Chaudasses\Documents\HugoLand\HugoLand\bin\Debug\HugoLand.exe.config
+C:\Users\Chaudasses\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.exe
+C:\Users\Chaudasses\Documents\HugoLand\HugoLand\obj\Debug\HugoLand.pdb

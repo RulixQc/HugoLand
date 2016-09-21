@@ -7,7 +7,7 @@
       <Diagram DiagramId="0b049c06b69d4155a013d27d0ba856dd" Name="Diagram1" ZoomLevel="109">
         <EntityTypeShape EntityType="Model.Classe" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CompteJoueur" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.EffetItem" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.EffetItem" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Hero" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.InventaireHero" Width="1.5" PointX="7.5" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Item" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />

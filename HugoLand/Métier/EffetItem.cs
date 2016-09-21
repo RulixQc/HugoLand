@@ -14,18 +14,45 @@ namespace HugoLand.Métier
     /// </summary>
     public static class EffetItem
     {
-        public static void AjouterEffet()
+        public static void AjouterEffet(int idItem, int valeurEffet, int typeEffet)
         {
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.Item item = context.Items.Where(i => i.Id == idItem).FirstOrDefault();
+                item.EffetItems.Add(new Accès_aux_données.EffetItem {ValeurEffet= valeurEffet, TypeEffet = typeEffet });
+                context.SaveChanges();
 
+            }
+
+    }
+
+        public static void SupprimerEffet(int idItem, int idEffet)
+        {
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.EffetItem effet = context.EffetItems.Where(y => y.ItemId == idItem && y.Id == idEffet).FirstOrDefault();
+                if (effet != null)
+                {
+                    context.EffetItems.Remove(effet);
+                    context.SaveChanges();
+                }
+
+            }
         }
 
-        public static void SupprimerEffet()
+        public static void ModifierEffet(int idItem, int idEffet, int valeurEffet, int typeEffet)
         {
+            using (Accès_aux_données.Entities context = new Accès_aux_données.Entities())
+            {
+                Accès_aux_données.EffetItem effet = context.EffetItems.Where(y => y.ItemId == idItem && y.Id == idEffet).FirstOrDefault();
+                if (effet != null)
+                {
+                    effet.TypeEffet = typeEffet;
+                    effet.ValeurEffet = valeurEffet;
+                    context.SaveChanges();
+                }
 
-        }
-
-        public static void ModifierEffet()
-        {
+            }
 
         }
     }
